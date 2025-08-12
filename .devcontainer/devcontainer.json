@@ -1,0 +1,28 @@
+{
+    "name": "Simple RAG MongoDB",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "lab-runner",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "forwardPorts": [
+        27017
+    ],
+    "hostRequirements": {
+        "cpus": 4
+    },
+    "containerEnv": {
+        "MONGODB_URI": "mongodb://admin:mongodb@mongodb:27017/"
+    },
+    "postCreateCommand": "pip install -r requirements.txt",
+    "customizations": {
+        "codespaces": {
+            "openFiles": []
+        },
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "mongodb.mongodb-vscode"
+            ]
+        }
+    }
+}
